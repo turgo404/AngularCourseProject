@@ -14,7 +14,11 @@ export class ShoppingListComponent {
   ];
   
   onIngredientAdded(ingredient: Ingredient){
+    if(ingredient.name.trim() === '' || ingredient.amount < 1){
+      alert('Please enter a name and a positive amout!');
+    } else {
     this.ingredients.push(ingredient);
+    }
   }
 
   constructor(){
